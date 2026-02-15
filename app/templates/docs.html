@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - SMB02</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Documentation</h1>
+
+        <section class="docs-section">
+            <h2>Git Clone</h2>
+            <pre><code>git clone https://github.com/rahulkate173/Outreach-Engine-.git
+cd Outreach-Engine-</code></pre>
+        </section>
+
+        <section class="docs-section">
+            <h2>Docker Installation</h2>
+            <pre><code>docker-compose up -d
+# Server runs on http://localhost:8000</code></pre>
+        </section>
+
+        <section class="docs-section">
+            <h2>Manual Installation</h2>
+            <pre><code>python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python cli.py auth start</code></pre>
+        </section>
+
+        <section class="docs-section">
+            <h2>CLI Commands</h2>
+            <pre><code>smb02 auth start        # Start with authentication
+smb02 server start      # Start FastAPI server
+smb02 reset-model       # Reset cached model</code></pre>
+        </section>
+
+        <section class="docs-section">
+            <h2>API Endpoints</h2>
+            <ul>
+                <li><strong>POST /api/auth/register</strong> - Register new user</li>
+                <li><strong>POST /api/auth/login</strong> - Login user</li>
+                <li><strong>POST /api/chat/message</strong> - Send chat message</li>
+                <li><strong>GET /api/billing/quota</strong> - Get quota status</li>
+                <li><strong>POST /api/billing/upgrade</strong> - Upgrade plan</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: smb02_mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: smb02_db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - smb02_network
+
+  fastapi:
+    build: .
+    container_name: smb02_fastapi
+    environment:
+      MONGODB_URI: mongodb://root:password@mongodb:27017
+      MONGODB_DB: smb02_db
+      SECRET_KEY: ${SECRET_KEY:-your-secret-key-change-in-production}
+      FASTAPI_ENV: production
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    volumes:
+      - ./models_cache:/app/models_cache
+      - ./memory:/app/memory
+    networks:
+      - smb02_network
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+volumes:
+  mongo_data:
+
+networks:
+  smb02_network:
+    driver: bridge

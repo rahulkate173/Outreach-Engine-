@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - SMB02 Outreach Engine</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Conversations</h3>
+                <button class="btn-new-chat" onclick="newChat()">+ New</button>
+            </div>
+            <div id="chatList" class="chat-list"></div>
+            <div class="sidebar-footer">
+                <div id="quotaStatus" class="quota-badge">Loading...</div>
+                <div id="planBadge" class="plan-badge">FREE</div>
+            </div>
+        </div>
+
+        <div class="main-chat">
+            <div id="messages" class="messages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Enter recipient name...">
+                <input type="text" id="companyInput" placeholder="Company...">
+                <input type="text" id="jobInput" placeholder="Job title...">
+                <textarea id="messageInput" placeholder="Your message..."></textarea>
+                <button onclick="sendMessage()" class="btn btn-primary">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/chat.js"></script>
+</body>
+</html>

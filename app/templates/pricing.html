@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - SMB02</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simple, Transparent Pricing</h1>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>FREE</h3>
+                <p class="price">$0<span>/mo</span></p>
+                <ul>
+                    <li>✓ 3 requests/day</li>
+                    <li>✓ Basic features</li>
+                    <li>✓ Community support</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="selectPlan('FREE')">Get Started</button>
+            </div>
+
+            <div class="pricing-card highlighted">
+                <h3>PRO</h3>
+                <p class="price">$29<span>/mo</span></p>
+                <ul>
+                    <li>✓ 200 requests/day</li>
+                    <li>✓ Advanced analytics</li>
+                    <li>✓ Email support</li>
+                </ul>
+                <button class="btn btn-primary" onclick="selectPlan('PRO')">Upgrade Now</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3>ULTRA</h3>
+                <p class="price">$99<span>/mo</span></p>
+                <ul>
+                    <li>✓ 1000 requests/day</li>
+                    <li>✓ Priority support</li>
+                    <li>✓ Custom workflows</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="selectPlan('ULTRA')">Upgrade Now</button>
+            </div>
+
+            <div class="pricing-card">
+                <h3>BUSINESS</h3>
+                <p class="price">Custom</p>
+                <ul>
+                    <li>✓ Unlimited requests</li>
+                    <li>✓ Dedicated support</li>
+                    <li>✓ API access</li>
+                </ul>
+                <button class="btn btn-secondary" onclick="alert('Contact sales')">Contact Sales</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
